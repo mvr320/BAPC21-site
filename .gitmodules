@@ -1,0 +1,3 @@
+[submodule "themes/AAPP-original-theme"]
+	path = themes/AAPP-original-theme
+	url = git@github.com:StudieverenigingSTORM/AAPP-original-theme

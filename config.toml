@@ -1,0 +1,5 @@
+baseURL = "https://aapp.storm.vu/"
+languageCode = "en-us"
+title = "ICPC VU Amsterdam"
+theme = "AAPP-original-theme"
+

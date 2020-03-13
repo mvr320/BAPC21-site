@@ -1,0 +1,25 @@
+name: Deploy website
+
+on:
+  push:
+    branches:
+    - master
+  pull_request:
+    branches:
+    - master
+
+jobs:
+  build-deploy:
+    runs-on: self-hosted
+    steps:
+    - uses: actions/checkout@v1                  
+      with:
+        submodules: true
+
+    - name: Setup Hugo                           
+      uses: peaceiris/actions-hugo@v2
+      with:
+        hugo-version: '0.62.0'
+
+    - name: Build                                
+      run: hugo -d /home/worker/public --cleanDestinationDir -D
