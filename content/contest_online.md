@@ -5,4 +5,4 @@ weight: 3
 draft: true
 ---
 # Contest Online
-Due to corona measures, we don't know this yet. We are working on both plans (onsite and online) and will inform you.
+Due to corona measures, we don't know this yet. We are working on both plans (on-site and online) and will inform you.
