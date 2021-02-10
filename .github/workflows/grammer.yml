@@ -1,5 +1,5 @@
 name: Grammar
-
+# https://pawel.krupa.net.pl/2018/07/automate-your-grammar-checks/
 on:
   push:
     branches: [ main ]
