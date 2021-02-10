@@ -1,7 +1,7 @@
 ---
 title: "Registration"
 date: 2019-04-30T23:41:52+02:00
-weight: 1
+weight: 2
 draft: true
 menu:
   main:

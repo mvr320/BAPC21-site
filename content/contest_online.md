@@ -1,7 +1,7 @@
 ---
 title: "Online Contest"
 date: 2019-04-30T23:41:52+02:00
-weight: 2
+weight: 3
 draft: true
 ---
 # Contest Online
