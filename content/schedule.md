@@ -7,7 +7,7 @@ draft: true
 # Schedule
 
 The schedule of the day itself is uncertain. The schedule of this year is roughly like this:
-- Month 04, discussion with other associations on when the preliminaries can be held (organised by individual universities).
+- Month 04, discussion with other associations on when the preliminaries can be held (organized by individual universities).
 - Month 06, possibly preliminaries
 - Month 09, Preliminaries
 - Month 10, BAPC21

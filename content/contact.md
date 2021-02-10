@@ -5,7 +5,7 @@ weight: 5
 draft: true
 ---
 # Contact
-If you have any questions, please drop us an email at: bapc “at” storm “dot” vu
+If you have any questions, please drop us an email at: organization “at” BAPC “dot” EU (Not active yet)
 
 ## Jury
 
