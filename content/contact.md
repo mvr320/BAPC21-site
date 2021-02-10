@@ -9,7 +9,7 @@ If you have any questions, please drop us an email at: organization “at” BAP
 
 ## Jury
 
-For BAPC 2021, the is a [Call for Problems](../jury) open to look for problems and jury members.
+The [Call for Problems](../jury) is open for both problems and jury members.
 
 ## Local committee
 In alphabetical order:
