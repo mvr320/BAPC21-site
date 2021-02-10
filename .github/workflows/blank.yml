@@ -28,7 +28,7 @@ jobs:
         with:
           name: HTMLout
           path: temp
-  textidote:
+  aspell:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -38,3 +38,17 @@ jobs:
         run: for file in `ls content`; do echo "  " $file; cat content/$file | aspell --lang=en list; done
       - name: aspell_dir
         run: pwd ; ls ; ls ~
+  mdspell:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install mdspell
+        run: npm install
+      - name: Check with aspell
+        run: for file in `ls content`; do ./node_modules/markdown-spellcheck/bin/mdspell content/$file; done
+  markdown:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Check markdown
+        run: for file in `ls content`; do docker run -ti -v $(pwd):/app --workdir=/app coala/base coala --files content/$file --bears=MarkdownBear; done
