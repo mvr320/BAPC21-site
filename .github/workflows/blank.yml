@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  textidote:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -15,14 +15,26 @@ jobs:
         run: |
           wget https://github.com/sylvainhalle/textidote/releases/download/v0.8.1/textidote_0.8.1_all.deb
           sudo dpkg -i textidote_0.8.1_all.deb
+      # Storage dir
+      - name: temp dir
+        run: mkdir temp
       # The actual check
       - name: Check document
-        run: textidote --check en main.tex || true
+        run: for file in `ls content`; do textidote --check en --type md content/$file || true; done
       # Make HTML interface
       - name: Create HTML document
-        run: textidote --output html --check en main.tex > html.html || true
+        run: for file in `ls content`; do textidote --check en --type md --output html content/$file > temp/$file.html|| true; done
       - uses: actions/upload-artifact@v2
         with:
           name: HTMLout
-          path: html.html
-
+          path: temp
+  textidote:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install aspell
+        run: sudo apt install aspell-en aspell
+      - name: Check with aspell
+        run: for file in `ls content`; do echo "  " $file; cat content/$file | aspell --lang=en list; done
+      - name: aspell_dir
+        run: pwd ; ls ; ls ~
