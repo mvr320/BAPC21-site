@@ -18,9 +18,6 @@ jobs:
       # Storage dir
       - name: temp dir
         run: mkdir temp
-      # The actual check
-      - name: Check document
-        run: for file in `ls content`; do textidote --check en --type md content/$file || true; done
       # Make HTML interface
       - name: Create HTML document
         run: for file in `ls content`; do textidote --check en --type md --output html content/$file > temp/$file.html|| true; done
@@ -28,6 +25,9 @@ jobs:
         with:
           name: HTMLout
           path: temp
+       # The actual check
+      - name: Check document
+        run: for file in `ls content`; do textidote --check en --type md content/$file; done
   aspell:
     runs-on: ubuntu-latest
     steps:
@@ -36,8 +36,8 @@ jobs:
         run: sudo apt install aspell-en aspell
       - name: Check with aspell
         run: for file in `ls content`; do echo "  " $file; cat content/$file | aspell --lang=en list; done
-      - name: aspell_dir
-        run: pwd ; ls ; ls ~
+      - name: Check with aspell
+        run: exit $(for file in `ls content`; do cat content/$file | aspell --lang=en list; done | wc -l)     
   mdspell:
     runs-on: ubuntu-latest
     steps:
