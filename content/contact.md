@@ -4,7 +4,9 @@ date: 2019-04-30T23:41:52+02:00
 weight: 5
 draft: true
 ---
+
 # Contact
+
 If you have any questions, please drop us an email at: organization “at” BAPC “dot” EU (Not active yet)
 
 ## Jury
@@ -12,6 +14,7 @@ If you have any questions, please drop us an email at: organization “at” BAP
 The [Call for Problems](../jury) is open for both problems and jury members.
 
 ## Local committee
+
 In alphabetical order:
 
 - Erik Baalhuis
