@@ -45,7 +45,7 @@ jobs:
       - name: Install mdspell
         run: npm install
       - name: Check with mdspell
-        run: ./node_modules/markdown-spellcheck/bin/mdspell content
+        run: ./node_modules/markdown-spellcheck/bin/mdspell content/*.md
   markdown:
     runs-on: ubuntu-latest
     steps:
