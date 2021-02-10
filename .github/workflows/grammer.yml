@@ -18,16 +18,18 @@ jobs:
       # Storage dir
       - name: temp dir
         run: mkdir temp
+      - name: new dict
+        run: cat .spelling | grep -v "^#" | grep -v "^ -" | sort | uniq > text.dict
       # Make HTML interface
       - name: Create HTML document
-        run: for file in `ls content`; do textidote --check en --type md --output html content/$file > temp/$file.html|| true; done
+        run: for file in `ls content`; do textidote --dict text.dict -check en --type md --output html content/$file > temp/$file.html|| true; done
       - uses: actions/upload-artifact@v2
         with:
           name: HTMLout
           path: temp
        # The actual check
       - name: Check document
-        run: for file in `ls content`; do textidote --check en --type md content/$file; done
+        run: for file in `ls content`; do textidote --dict text.dict --check en --type md content/$file; done
   aspell:
     runs-on: ubuntu-latest
     steps:
