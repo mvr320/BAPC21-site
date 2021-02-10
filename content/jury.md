@@ -11,6 +11,6 @@ draft: true
 
 The call for problems can be found at [jury.bapc.eu](jury.bapc.eu).
 
-## Further questions
+## Additional questions
 
 This is arranged via other channels, please check SLACK for more information.
