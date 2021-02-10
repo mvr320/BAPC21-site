@@ -44,11 +44,11 @@ jobs:
       - uses: actions/checkout@v2
       - name: Install mdspell
         run: npm install
-      - name: Check with aspell
-        run: for file in `ls content`; do ./node_modules/markdown-spellcheck/bin/mdspell content/$file; done
+      - name: Check with mdspell
+        run: ./node_modules/markdown-spellcheck/bin/mdspell content
   markdown:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Check markdown
-        run: for file in `ls content`; do docker run -v $(pwd):/app --workdir=/app coala/base coala --files content/$file --bears=MarkdownBear; done
+        run: for file in `ls content`; do docker run -v $(pwd):/app --workdir=/app coala/base coala --ci --files content/$file --bears=MarkdownBear; done
