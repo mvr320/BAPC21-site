@@ -51,4 +51,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Check markdown
-        run: for file in `ls content`; do docker run -ti -v $(pwd):/app --workdir=/app coala/base coala --files content/$file --bears=MarkdownBear; done
+        run: for file in `ls content`; do docker run -v $(pwd):/app --workdir=/app coala/base coala --files content/$file --bears=MarkdownBear; done
