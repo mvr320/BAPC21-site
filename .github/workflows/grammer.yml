@@ -45,7 +45,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install mdspell
-        run: npm install
+        run: npm install mdspell
       - name: Check with mdspell
         run: ./node_modules/markdown-spellcheck/bin/mdspell -r -n --en-us content/*.md
   markdown:
